@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    android:orientation="vertical"
+    >
+
+    <com.github.florent37.arclayout.ArcLayout
+        android:id="@+id/diagonalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:arc_cropDirection="cropOutside"
+        app:arc_height="90dp"
+        app:arc_padding="30dp"
+        >
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/road"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Welcome Onboard"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                />
+
+        </FrameLayout>
+
+    </com.github.florent37.arclayout.ArcLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sample"
+        />
+
+</LinearLayout>
