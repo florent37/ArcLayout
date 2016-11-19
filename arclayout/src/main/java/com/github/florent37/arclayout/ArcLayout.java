@@ -3,13 +3,19 @@ package com.github.florent37.arclayout;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 
 public class ArcLayout extends FrameLayout {
@@ -20,7 +26,8 @@ public class ArcLayout extends FrameLayout {
 
     int width = 0;
 
-    Path clipPath, outlinePath;
+    Path clipPath;
+    Rect outlineRect;
 
     Paint paint;
 
@@ -56,7 +63,17 @@ public class ArcLayout extends FrameLayout {
         if (width > 0 && height > 0) {
 
             clipPath = createClipPath();
-
+            ViewCompat.setElevation(this, settings.getElevation());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && settings.isCropInside()) {
+                ViewCompat.setElevation(this, settings.getElevation());
+                setOutlineProvider(new ViewOutlineProvider() {
+                    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                    @Override
+                    public void getOutline(View view, Outline outline) {
+                        outline.setOval(outlineRect);
+                    }
+                });
+            }
         }
     }
 
@@ -66,12 +83,14 @@ public class ArcLayout extends FrameLayout {
         float verticalHeight = settings.getArcHeight();
         float horizontalPadding = settings.getArcPadding();
         final RectF arrowOval = new RectF();
+        outlineRect = new Rect();
 
         if(settings.isCropInside()) {
             path.moveTo(0, height);
             path.lineTo(0, height - verticalHeight);
 
             arrowOval.set(-horizontalPadding, height - verticalHeight * 2, width + horizontalPadding, height);
+            outlineRect.set((int) -horizontalPadding, (int) (height - verticalHeight * 2), (int) (width + horizontalPadding), height);
 
             path.arcTo(arrowOval, 180, -180, true);
             path.lineTo(width, height);
@@ -81,6 +100,7 @@ public class ArcLayout extends FrameLayout {
             path.lineTo(0, height - verticalHeight);
 
             arrowOval.set(-horizontalPadding, height - verticalHeight, width + horizontalPadding, height + verticalHeight);
+            outlineRect.set((int) -horizontalPadding, (int) (height - verticalHeight), (int) (width + horizontalPadding), (int) (height + verticalHeight));
             path.arcTo(arrowOval, -180, 180, true);
             path.lineTo(width, height);
             path.lineTo(0, height);
