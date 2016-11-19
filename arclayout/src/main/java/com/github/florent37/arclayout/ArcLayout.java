@@ -42,6 +42,7 @@ public class ArcLayout extends FrameLayout {
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.WHITE);
+        setLayerType(LAYER_TYPE_HARDWARE, paint);
 
         pdMode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
     }
@@ -98,14 +99,10 @@ public class ArcLayout extends FrameLayout {
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
-
         super.dispatchDraw(canvas);
 
         paint.setXfermode(pdMode);
         canvas.drawPath(clipPath, paint);
-
-        canvas.restoreToCount(saveCount);
         paint.setXfermode(null);
     }
 }
