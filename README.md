@@ -1,5 +1,7 @@
 # ArcLayout
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ArcLayout-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4694)
+
 With Arc Layout explore new styles and approaches on material design
 
 [![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
