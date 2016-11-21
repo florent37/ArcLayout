@@ -42,7 +42,7 @@ With Arc Layout explore new styles and approaches on material design
  </com.github.florent37.arclayout.ArcLayout>        
 ```
 
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/outside.png)](https://www.github.com/florent37/ArcLayout)
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/outside_small.png)](https://www.github.com/florent37/ArcLayout)
 
 ## Crop Inside
 
@@ -64,7 +64,7 @@ With Arc Layout explore new styles and approaches on material design
  </com.github.florent37.arclayout.ArcLayout>        
 ```
 
-[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/inside.png)](https://www.github.com/florent37/ArcLayout)
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/inside_small.png)](https://www.github.com/florent37/ArcLayout)
 
 # KenBurns
 
