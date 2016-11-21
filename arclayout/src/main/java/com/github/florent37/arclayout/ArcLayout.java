@@ -20,16 +20,16 @@ import android.widget.FrameLayout;
 
 public class ArcLayout extends FrameLayout {
 
-    ArcLayoutSettings settings;
+    private ArcLayoutSettings settings;
 
-    int height = 0;
+    private int height = 0;
 
-    int width = 0;
+    private int width = 0;
 
-    Path clipPath;
-    Rect outlineRect;
+    private Path clipPath;
+    private Rect outlineRect;
 
-    Paint paint;
+    private Paint paint;
 
     private PorterDuffXfermode pdMode;
 
@@ -85,12 +85,18 @@ public class ArcLayout extends FrameLayout {
         final RectF arrowOval = new RectF();
         outlineRect = new Rect();
 
+        final int left = (int) -horizontalPadding;
+        final int right = (int) (width + horizontalPadding);
+
         if(settings.isCropInside()) {
             path.moveTo(0, height);
             path.lineTo(0, height - verticalHeight);
 
-            arrowOval.set(-horizontalPadding, height - verticalHeight * 2, width + horizontalPadding, height);
-            outlineRect.set((int) -horizontalPadding, (int) (height - verticalHeight * 2), (int) (width + horizontalPadding), height);
+            final int top = (int)(height - verticalHeight * 2);
+            final int bottom = height;
+
+            arrowOval.set(left, top, right, bottom);
+            outlineRect.set(left, top, right, bottom);
 
             path.arcTo(arrowOval, 180, -180, true);
             path.lineTo(width, height);
@@ -99,8 +105,11 @@ public class ArcLayout extends FrameLayout {
             path.moveTo(0, height);
             path.lineTo(0, height - verticalHeight);
 
-            arrowOval.set(-horizontalPadding, height - verticalHeight, width + horizontalPadding, height + verticalHeight);
-            outlineRect.set((int) -horizontalPadding, (int) (height - verticalHeight), (int) (width + horizontalPadding), (int) (height + verticalHeight));
+            final int top = (int) (height - verticalHeight);
+            final int bottom = (int) (height + verticalHeight);
+
+            arrowOval.set(left, top, right, bottom);
+            outlineRect.set(left, top, right, bottom);
             path.arcTo(arrowOval, -180, 180, true);
             path.lineTo(width, height);
             path.lineTo(0, height);

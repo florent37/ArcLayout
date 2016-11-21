@@ -2,6 +2,8 @@
 
 With Arc Layout explore new styles and approaches on material design
 
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
+
 # Usage
 
 ```xml
@@ -40,6 +42,8 @@ With Arc Layout explore new styles and approaches on material design
  </com.github.florent37.arclayout.ArcLayout>        
 ```
 
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/outside.png)](https://www.github.com/florent37/ArcLayout)
+
 ## Crop Inside
 
 ```xml
@@ -60,11 +64,13 @@ With Arc Layout explore new styles and approaches on material design
  </com.github.florent37.arclayout.ArcLayout>        
 ```
 
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/inside.png)](https://www.github.com/florent37/ArcLayout)
+
 # KenBurns
 
 Using [https://github.com/flavioarfaria/KenBurnsView](https://github.com/flavioarfaria/KenBurnsView)
 
-[![screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample.gif)](https://www.github.com/florent37/DiagonalLayout)
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
 
 ```xml
 <com.github.florent37.arclayout.ArcLayout
@@ -93,6 +99,19 @@ In your module [![Download](https://api.bintray.com/packages/florent37/maven/Arc
 ```groovy
 compile 'com.github.florent37:arclayout:1.0.0'
 ```
+
+#Inspirations
+
+**Cinema Application by Zsolt Szilvai**
+
+The new Star Wars movie is coming soon, so I decided to design this cinema app screen with one of the Rogue One posters. 
+Also, I tried something new: notice, that the white rectangle on the bottom is bended, which makes the design a bit more lively. The app bar has a reduced opacity and the image behind it is blurred to get a unique look. 
+I'd appreciate any feedback.
+
+[https://material.uplabs.com/posts/user-profile-concept](https://material.uplabs.com/posts/user-profile-concept)
+
+[![screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/materialup.png)](https://material.uplabs.com/posts/user-profile-concept)
+
 
 #Credits
 
