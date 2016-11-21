@@ -108,9 +108,9 @@ The new Star Wars movie is coming soon, so I decided to design this cinema app s
 Also, I tried something new: notice, that the white rectangle on the bottom is bended, which makes the design a bit more lively. The app bar has a reduced opacity and the image behind it is blurred to get a unique look. 
 I'd appreciate any feedback.
 
-[https://material.uplabs.com/posts/user-profile-concept](https://material.uplabs.com/posts/user-profile-concept)
+[https://material.uplabs.com/posts/cinema-application-interface](https://material.uplabs.com/posts/cinema-application-interface)
 
-[![screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/materialup.png)](https://material.uplabs.com/posts/user-profile-concept)
+[![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/materialup.png)](https://material.uplabs.com/posts/cinema-application-interface)
 
 
 #Credits
