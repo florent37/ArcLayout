@@ -12,7 +12,6 @@ public class ArcLayoutSettings {
     private boolean cropInside = true;
     private float arcHeight;
     private float elevation;
-    private float arcPadding;
 
     private static float dpToPx(Context context, int dp) {
         Resources r = context.getResources();
@@ -22,7 +21,6 @@ public class ArcLayoutSettings {
     ArcLayoutSettings(Context context, AttributeSet attrs) {
         TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.ArcHeader, 0, 0);
         arcHeight = styledAttributes.getDimension(R.styleable.ArcHeader_arc_height, dpToPx(context, 10));
-        arcPadding = styledAttributes.getDimension(R.styleable.ArcHeader_arc_padding, dpToPx(context, 10));
 
         final int cropDirection = styledAttributes.getInt(R.styleable.ArcHeader_arc_cropDirection, CROP_INSIDE);
         cropInside = (cropDirection & CROP_INSIDE) == CROP_INSIDE;
@@ -44,9 +42,5 @@ public class ArcLayoutSettings {
 
     public float getArcHeight() {
         return arcHeight;
-    }
-
-    public float getArcPadding() {
-        return arcPadding;
     }
 }
