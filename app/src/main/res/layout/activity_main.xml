@@ -24,8 +24,7 @@
             android:layout_alignParentTop="true"
             android:elevation="10dip"
             app:arc_cropDirection="cropOutside"
-            app:arc_height="90dp"
-            app:arc_padding="30dp"
+            app:arc_height="50dp"
             >
 
             <com.flaviofaria.kenburnsview.KenBurnsView
@@ -58,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="335dp"
+            android:layout_marginTop="325dp"
             android:src="@drawable/ic_add"
             app:backgroundTint="#ce471d"
             app:elevation="15dp"
