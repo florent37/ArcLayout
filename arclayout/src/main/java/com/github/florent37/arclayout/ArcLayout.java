@@ -6,10 +6,6 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
@@ -27,11 +23,6 @@ public class ArcLayout extends FrameLayout {
     private int width = 0;
 
     private Path clipPath;
-    private Rect outlineRect;
-
-    private Paint paint;
-
-    private PorterDuffXfermode pdMode;
 
     public ArcLayout(Context context) {
         super(context);
@@ -47,11 +38,49 @@ public class ArcLayout extends FrameLayout {
         settings = new ArcLayoutSettings(context, attrs);
         settings.setElevation(ViewCompat.getElevation(this));
 
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.WHITE);
-        setLayerType(LAYER_TYPE_HARDWARE, paint);
+        /**
+         * If hardware acceleration is on (default from API 14), clipPath worked correctly
+         * from API 18.
+         *
+         * So we will disable hardware Acceleration if API < 18
+         *
+         * https://developer.android.com/guide/topics/graphics/hardware-accel.html#unsupported
+         * Section #Unsupported Drawing Operations
+         */
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+    }
 
-        pdMode = new PorterDuffXfermode(PorterDuff.Mode.CLEAR);
+    private Path createClipPath() {
+        final Path path = new Path();
+
+        float arcHeight = settings.getArcHeight();
+
+        if (settings.isCropInside()) {
+            path.moveTo(0, 0);
+            path.lineTo(0, height - arcHeight);
+            path.quadTo(width / 2, height + arcHeight,
+                    width, height - arcHeight);
+            path.lineTo(width, 0);
+            path.close();
+        } else {
+            path.moveTo(0, 0);
+            path.lineTo(0, height);
+            path.quadTo(width / 2, height - 2 * arcHeight,
+                    width, height);
+            path.lineTo(width, 0);
+            path.close();
+        }
+        return path;
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        if (changed) {
+            calculateLayout();
+        }
     }
 
     private void calculateLayout() {
@@ -70,68 +99,21 @@ public class ArcLayout extends FrameLayout {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public void getOutline(View view, Outline outline) {
-                        outline.setOval(outlineRect);
+                        outline.setConvexPath(clipPath);
                     }
                 });
             }
         }
     }
 
-    private Path createClipPath() {
-        final Path path = new Path();
-
-        float verticalHeight = settings.getArcHeight();
-        float horizontalPadding = settings.getArcPadding();
-        final RectF arrowOval = new RectF();
-        outlineRect = new Rect();
-
-        final int left = (int) -horizontalPadding;
-        final int right = (int) (width + horizontalPadding);
-
-        if(settings.isCropInside()) {
-            path.moveTo(0, height);
-            path.lineTo(0, height - verticalHeight);
-
-            final int top = (int)(height - verticalHeight * 2);
-            final int bottom = height;
-
-            arrowOval.set(left, top, right, bottom);
-            outlineRect.set(left, top, right, bottom);
-
-            path.arcTo(arrowOval, 180, -180, true);
-            path.lineTo(width, height);
-            path.lineTo(0, height);
-        } else {
-            path.moveTo(0, height);
-            path.lineTo(0, height - verticalHeight);
-
-            final int top = (int) (height - verticalHeight);
-            final int bottom = (int) (height + verticalHeight);
-
-            arrowOval.set(left, top, right, bottom);
-            outlineRect.set(left, top, right, bottom);
-            path.arcTo(arrowOval, -180, 180, true);
-            path.lineTo(width, height);
-            path.lineTo(0, height);
-        }
-
-        return path;
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        if (changed) {
-            calculateLayout();
-        }
-    }
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
+        canvas.save();
+
+        canvas.clipPath(clipPath);
         super.dispatchDraw(canvas);
 
-        paint.setXfermode(pdMode);
-        canvas.drawPath(clipPath, paint);
-        paint.setXfermode(null);
+        canvas.restore();
     }
 }

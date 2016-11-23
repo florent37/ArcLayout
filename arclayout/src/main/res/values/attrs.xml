@@ -2,7 +2,6 @@
 <resources>
     <declare-styleable name="ArcHeader">
         <attr name="arc_height" format="dimension" />
-        <attr name="arc_padding" format="dimension" />
         <attr name="arc_cropDirection" format="enum">
             <enum name="cropInside" value="0" />
             <enum name="cropOutside" value="1"/>
