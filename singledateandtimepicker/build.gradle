@@ -27,17 +27,17 @@ dependencies {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'ArcLayout'
+    bintrayName = 'SingleDateAndTimePicker'
     orgName = 'florent37'
 
     publishedGroupId = 'com.github.florent37'
-    libraryName = 'ArcLayout'
-    artifact = 'arclayout'
+    libraryName = 'SingleDateAndTimePicker'
+    artifact = 'singledateandtimepicker'
 
     libraryDescription = 'ArcLayout'
 
-    siteUrl = 'https://github.com/florent37/ArcLayout'
-    gitUrl = 'https://github.com/florent37/ArcLayout.git'
+    siteUrl = 'https://github.com/florent37/SingleDateAndTimePicker'
+    gitUrl = 'https://github.com/florent37/SingleDateAndTimePicker.git'
 
     libraryVersion = rootProject.ext.libraryVersion
 

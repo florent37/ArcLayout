@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ArcLayout.iml" filepath="$PROJECT_DIR$/ArcLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SingleDateAndTimePicker.iml" filepath="$PROJECT_DIR$/SingleDateAndTimePicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/arclayout/arclayout.iml" filepath="$PROJECT_DIR$/arclayout/arclayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/singledateandtimepicker/singledateandtimepicker.iml" filepath="$PROJECT_DIR$/singledateandtimepicker/singledateandtimepicker.iml" />
     </modules>
   </component>
 </project>
