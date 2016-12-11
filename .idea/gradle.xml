@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/singledateandtimepicker" />
+            <option value="$PROJECT_DIR$/arclayout" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

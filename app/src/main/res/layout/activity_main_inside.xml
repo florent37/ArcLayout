@@ -18,13 +18,13 @@
         <com.github.florent37.arclayout.ArcLayout
             android:id="@+id/diagonalLayout"
             android:layout_width="match_parent"
-            android:layout_height="380dp"
+            android:layout_height="340dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:elevation="10dip"
-            app:arc_cropDirection="cropOutside"
-            app:arc_height="50dp"
+            app:arc_cropDirection="cropInside"
+            app:arc_height="45dp"
             >
 
             <com.flaviofaria.kenburnsview.KenBurnsView
@@ -34,22 +34,6 @@
                 android:src="@drawable/rogue"
                 />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-                <ImageView
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|bottom"
-                    android:layout_marginBottom="30dp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/rogue_logo"
-                    />
-
-            </FrameLayout>
-
         </com.github.florent37.arclayout.ArcLayout>
 
         <android.support.design.widget.FloatingActionButton
@@ -57,20 +41,32 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="325dp"
+            android:layout_marginTop="290dp"
             android:src="@drawable/ic_add"
             app:backgroundTint="#ce471d"
             app:elevation="15dp"
             app:fabSize="normal"
             />
 
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp"
+            android:layout_marginTop="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="30dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/rogue_logo"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/diagonalLayout"
-            android:layout_marginTop="10dp"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             >
 
             <TextView

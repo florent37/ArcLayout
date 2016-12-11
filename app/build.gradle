@@ -16,5 +16,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:' + project.supportVersion
     compile 'com.android.support:design:' + project.supportVersion
-    compile project(':singledateandtimepicker')
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile project(':arclayout')
 }

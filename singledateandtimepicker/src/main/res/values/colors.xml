@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="picker_default_text_color">#999</color>
-    <color name="picker_default_selected_text_color">@android:color/black</color>
-</resources>
