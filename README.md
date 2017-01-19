@@ -13,6 +13,7 @@ With Arc Layout explore new styles and approaches on material design
          android:layout_width="match_parent"
          android:layout_height="200dp"
          app:arc_cropDirection="cropOutside|cropInside"
+         app:arc_cropPosition="bottom|top|left|right"
          app:arc_height="90dp"
          app:arc_padding="30dp"
          >
@@ -99,7 +100,7 @@ Using [https://github.com/flavioarfaria/KenBurnsView](https://github.com/flavioa
 
 In your module [![Download](https://api.bintray.com/packages/florent37/maven/ArcLayout/images/download.svg)](https://bintray.com/florent37/maven/ArcLayout/_latestVersion)
 ```groovy
-compile 'com.github.florent37:arclayout:1.0.1'
+compile 'com.github.florent37:arclayout:1.0.2'
 ```
 
 #Inspirations

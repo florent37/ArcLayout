@@ -24,6 +24,7 @@
             android:layout_alignParentTop="true"
             android:elevation="10dip"
             app:arc_cropDirection="cropOutside"
+            app:arc_position="bottom"
             app:arc_height="50dp"
             >
 

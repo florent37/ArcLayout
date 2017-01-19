@@ -57,21 +57,70 @@ public class ArcLayout extends FrameLayout {
 
         float arcHeight = settings.getArcHeight();
 
-        if (settings.isCropInside()) {
-            path.moveTo(0, 0);
-            path.lineTo(0, height - arcHeight);
-            path.quadTo(width / 2, height + arcHeight,
-                    width, height - arcHeight);
-            path.lineTo(width, 0);
-            path.close();
-        } else {
-            path.moveTo(0, 0);
-            path.lineTo(0, height);
-            path.quadTo(width / 2, height - 2 * arcHeight,
-                    width, height);
-            path.lineTo(width, 0);
-            path.close();
+        switch (settings.getPosition()){
+            case ArcLayoutSettings.POSITION_BOTTOM:{
+                if (settings.isCropInside()) {
+                    path.moveTo(0, 0);
+                    path.lineTo(0, height);
+                    path.quadTo(width / 2, height - 2 * arcHeight, width, height);
+                    path.lineTo(width, 0);
+                    path.close();
+                } else {
+                    path.moveTo(0, 0);
+                    path.lineTo(0, height - arcHeight);
+                    path.quadTo(width / 2, height + arcHeight, width, height - arcHeight);
+                    path.lineTo(width, 0);
+                    path.close();
+                }
+                break;
+            }
+            case ArcLayoutSettings.POSITION_TOP:
+                if (settings.isCropInside()) {
+                    path.moveTo(0, height);
+                    path.lineTo(0, 0);
+                    path.quadTo(width / 2, 2 * arcHeight, width, 0);
+                    path.lineTo(width, height);
+                    path.close();
+                } else {
+                    path.moveTo(0, arcHeight);
+                    path.quadTo(width / 2, -arcHeight, width, arcHeight);
+                    path.lineTo(width, height);
+                    path.lineTo(0, height);
+                    path.close();
+                }
+                break;
+            case ArcLayoutSettings.POSITION_LEFT:
+                if (settings.isCropInside()) {
+                    path.moveTo(width, 0);
+                    path.lineTo(0, 0);
+                    path.quadTo(arcHeight * 2, height / 2, 0, height);
+                    path.lineTo(width, height);
+                    path.close();
+                } else {
+                    path.moveTo(width, 0);
+                    path.lineTo(arcHeight, 0);
+                    path.quadTo(-arcHeight, height / 2, arcHeight, height);
+                    path.lineTo(width, height);
+                    path.close();
+                }
+                break;
+            case ArcLayoutSettings.POSITION_RIGHT:
+                if (settings.isCropInside()) {
+                    path.moveTo(0, 0);
+                    path.lineTo(width, 0);
+                    path.quadTo(width - arcHeight * 2, height / 2, width, height);
+                    path.lineTo(0, height);
+                    path.close();
+                } else {
+                    path.moveTo(0, 0);
+                    path.lineTo(width - arcHeight, 0);
+                    path.quadTo(width + arcHeight, height / 2, width - arcHeight, height);
+                    path.lineTo(0, height);
+                    path.close();
+                }
+                break;
         }
+
         return path;
     }
 
@@ -93,7 +142,7 @@ public class ArcLayout extends FrameLayout {
 
             clipPath = createClipPath();
             ViewCompat.setElevation(this, settings.getElevation());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && settings.isCropInside()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !settings.isCropInside()) {
                 ViewCompat.setElevation(this, settings.getElevation());
                 setOutlineProvider(new ViewOutlineProvider() {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
