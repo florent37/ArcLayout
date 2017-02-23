@@ -16,6 +16,7 @@ With Arc Layout explore new styles and approaches on material design
          app:arc_cropPosition="bottom|top|left|right"
          app:arc_height="90dp"
          app:arc_padding="30dp"
+         android:elevation="5dp"
          >
 
          <!-- YOUR CONTENT -->
@@ -34,6 +35,7 @@ With Arc Layout explore new styles and approaches on material design
           app:arc_cropDirection="cropOutside"
           app:arc_height="90dp"
           app:arc_padding="30dp"
+          android:elevation="5dp"
           >
  
           <ImageView
@@ -56,6 +58,7 @@ With Arc Layout explore new styles and approaches on material design
           app:arc_cropDirection="cropInside"
           app:arc_height="90dp"
           app:arc_padding="30dp"
+          android:elevation="5dp"
           >
  
           <ImageView
