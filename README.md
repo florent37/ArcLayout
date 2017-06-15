@@ -13,9 +13,8 @@ With Arc Layout explore new styles and approaches on material design
          android:layout_width="match_parent"
          android:layout_height="200dp"
          app:arc_cropDirection="cropOutside|cropInside"
-         app:arc_cropPosition="bottom|top|left|right"
+         app:arc_position="bottom|top|left|right"
          app:arc_height="90dp"
-         app:arc_padding="30dp"
          android:elevation="5dp"
          >
 
