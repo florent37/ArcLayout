@@ -98,14 +98,16 @@ Using [https://github.com/flavioarfaria/KenBurnsView](https://github.com/flavioa
 </com.github.florent37.arclayout.ArcLayout>
 ```
 
-#Download
+# Download
+
+<a href='https://ko-fi.com/A160LCC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 In your module [![Download](https://api.bintray.com/packages/florent37/maven/ArcLayout/images/download.svg)](https://bintray.com/florent37/maven/ArcLayout/_latestVersion)
 ```groovy
 compile 'com.github.florent37:arclayout:1.0.2'
 ```
 
-#Inspirations
+# Inspirations
 
 **Cinema Application by Zsolt Szilvai**
 
@@ -118,7 +120,7 @@ I'd appreciate any feedback.
 [![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/materialup.png)](https://material.uplabs.com/posts/cinema-application-interface)
 
 
-#Credits
+# Credits
 
 Author: Florent Champigny [http://www.florentchampigny.com/](http://www.florentchampigny.com/)
 
