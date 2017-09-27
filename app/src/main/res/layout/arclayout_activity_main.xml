@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/rogue"
+                android:src="@drawable/arclayout_rogue"
                 />
 
             <FrameLayout
@@ -46,7 +46,7 @@
                     android:layout_gravity="center_horizontal|bottom"
                     android:layout_marginBottom="30dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/rogue_logo"
+                    android:src="@drawable/arclayout_rogue_logo"
                     />
 
             </FrameLayout>
@@ -59,7 +59,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:layout_marginTop="325dp"
-            android:src="@drawable/ic_add"
+            android:src="@drawable/arclayout_ic_add"
             app:backgroundTint="#ce471d"
             app:elevation="15dp"
             app:fabSize="normal"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="18dp"
                 android:fontFamily="sans-serif"
-                android:text="@string/description"
+                android:text="@string/arclayout_description"
                 android:textColor="#979696"
                 android:textSize="15sp"
                 />
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="18dp"
                 android:fontFamily="sans-serif"
-                android:text="@string/development"
+                android:text="@string/arclayout_development"
                 android:textColor="#979696"
                 android:textSize="15sp"
                 />
