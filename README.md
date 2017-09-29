@@ -4,6 +4,10 @@
 
 With Arc Layout explore new styles and approaches on material design
 
+<a href="com.github.florent37.florent.champigny">
+  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a>
+
 [![screen](https://raw.githubusercontent.com/florent37/ArcLayout/master/media/video1.gif)](https://www.github.com/florent37/ArcLayout)
 
 # Usage
@@ -124,6 +128,9 @@ I'd appreciate any feedback.
 
 Author: Florent Champigny [http://www.florentchampigny.com/](http://www.florentchampigny.com/)
 
+<a href="com.github.florent37.florent.champigny">
+  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a>
 <a href="https://plus.google.com/+florentchampigny">
   <img alt="Follow me on Google+"
        src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png" />
