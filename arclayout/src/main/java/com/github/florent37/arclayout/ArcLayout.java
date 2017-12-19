@@ -158,11 +158,14 @@ public class ArcLayout extends FrameLayout {
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        canvas.save();
-
-        canvas.clipPath(clipPath);
+    	 Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColor(Color.WHITE);
+        int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
         super.dispatchDraw(canvas);
-
-        canvas.restore();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
+        canvas.drawPath(clipPath, paint);
+        canvas.restoreToCount(saveCount);
+        paint.setXfermode(null);
     }
 }
