@@ -13,6 +13,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
+import android.graphics.PorterDuff;
 
 public class ArcLayout extends FrameLayout {
 
