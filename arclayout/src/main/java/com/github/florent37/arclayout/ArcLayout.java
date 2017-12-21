@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewCompat;
@@ -13,7 +15,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
-import android.graphics.PorterDuff;
 
 public class ArcLayout extends FrameLayout {
 
