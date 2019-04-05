@@ -26,5 +26,5 @@ ext {
     sdk = 28
     minSdk = 14
     libraryVersion = "1.0.5"
-    supportVersion = "28.0.0"
+    supportVersion = '1.0.0-beta01'
 }

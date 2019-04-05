@@ -13,8 +13,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:' + project.supportVersion
-    implementation 'com.android.support:design:' + project.supportVersion
+    implementation "androidx.appcompat:appcompat:$project.supportVersion"
+    implementation "com.google.android.material:material:$project.supportVersion"
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation project(':arclayout')

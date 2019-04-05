@@ -1,7 +1,7 @@
 package com.github.florent37.sample.arclayout;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ArcLayoutMainActivity extends AppCompatActivity {
 
