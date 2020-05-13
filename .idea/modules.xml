@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ArcLayout.iml" filepath="$PROJECT_DIR$/ArcLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/ArcLayout-app.iml" filepath="$PROJECT_DIR$/app/ArcLayout-app.iml" group="ArcLayout/app" />
+      <module fileurl="file://$PROJECT_DIR$/arclayout/ArcLayout-arclayout.iml" filepath="$PROJECT_DIR$/arclayout/ArcLayout-arclayout.iml" group="ArcLayout/arclayout" />
+      <module fileurl="file://$PROJECT_DIR$/android-ArcLayout.iml" filepath="$PROJECT_DIR$/android-ArcLayout.iml" group="ArcLayout" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/arclayout/arclayout.iml" filepath="$PROJECT_DIR$/arclayout/arclayout.iml" />
     </modules>
